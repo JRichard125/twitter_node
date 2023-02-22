@@ -8,7 +8,8 @@ exports.createTweet = async (req, res, next) => { // localhost:4000/tweet/new
         res.redirect('/')
     } catch (err) {
         const errors = Object.keys(err.errors).map(key => err.errors[key].message)
-        res.status(400).render('tweets/tweet-list', {errors})
+        const tweets = await findAllTweets()
+        res.status(400).render('tweets/tweet-list', {errors, tweets})
     }
 }
 
