@@ -1,8 +1,6 @@
+const { createTweet } = require('../controllers/tweet.controllers')
 const router = require('express').Router()
 
-
-router.get('/new', (req,res) => {
-    res.render('tweets/tweet-form')
-})
+router.post('/new', createTweet)
 
 module.exports = router
