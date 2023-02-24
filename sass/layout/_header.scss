@@ -1,0 +1,16 @@
+.top-bar {
+    height: 15vh;
+    padding: 15px 25px;
+    box-shadow: $box-shadow;
+    background-color: $bg;
+    @include flex($justify: space-between);
+
+    ul {
+        width: 30%;
+        @include flex;
+
+        li {
+            margin-left: 10px;
+        }
+    }
+}
