@@ -1,5 +1,6 @@
 .tweets-container {
     width: 80%;
+    padding-bottom: 100px;
     @include flex;
 
     .tweets-list {

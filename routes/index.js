@@ -1,9 +1,11 @@
-const router = require('express').Router()
-const tweet = require('./tweet.routes')
-const { tweetList } = require('../controllers/tweet.controllers')
+const router = require('express').Router();
+const tweetRoute = require('./tweet.routes');
+const userRoute = require('./user.routes');
+const { tweetList } = require('../controllers/tweet.controllers');
 
-router.use('/tweet', tweet)
+router.use('/tweet', tweetRoute);
+router.use('/user', userRoute);
 
-router.get('/', tweetList)
+router.get('/', tweetList);
 
 module.exports = router;
