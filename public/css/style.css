@@ -203,4 +203,32 @@ a {
   flex-wrap: wrap;
 }
 
+section {
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+section .content-box {
+  width: 20%;
+  padding: 30px;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+section .content-box .form-box {
+  width: 100%;
+}
+section .content-box .form-box .input-box {
+  margin-top: 15px;
+}
+section .content-box .form-box .input-box input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  outline-style: none;
+}
+
 /*# sourceMappingURL=style.css.map */

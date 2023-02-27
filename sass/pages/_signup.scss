@@ -1,0 +1,29 @@
+section {
+    padding: 50px;
+
+
+    @include flex;
+
+    .content-box {
+        width: 20%;
+        padding: 30px;
+        border: 1px solid $text-color;
+        border-radius: 5px;
+
+        .form-box {
+            width: 100%;
+
+            .input-box {
+                margin-top: 15px;
+                
+                input {
+                    width: 100%;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    border: 1px solid $text-color;
+                    outline-style: none;
+                }
+            }
+        }
+    }
+}
