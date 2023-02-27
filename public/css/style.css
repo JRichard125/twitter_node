@@ -113,49 +113,6 @@ a {
 .tweets-container .tweets-list form .form-body .form-item:last-child {
   text-align: right;
 }
-.tweets-container .tweets-list .tweet-card {
-  width: 50%;
-  border: 1px solid #333;
-  border-radius: 5px;
-  margin-top: 2rem;
-  padding: 1.5rem;
-}
-@media (max-width: 480px) {
-  .tweets-container .tweets-list .tweet-card {
-    width: 100%;
-  }
-}
-.tweets-container .tweets-list .tweet-card-author {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.tweets-container .tweets-list .tweet-card-author img {
-  width: 2.5rem;
-}
-.tweets-container .tweets-list .tweet-card-author p {
-  margin-left: 1rem;
-}
-.tweets-container .tweets-list .tweet-card-body {
-  padding: 1rem;
-}
-.tweets-container .tweets-list .tweet-card-actions {
-  margin-top: 3rem;
-  border-top: 1px solid #dfdede;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.tweets-container .tweets-list .tweet-card-actions i {
-  margin-top: 1.3rem;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  cursor: pointer;
-}
 
 .btn {
   padding: 10px 15px;
@@ -174,6 +131,63 @@ a {
 }
 .btn-secondary:hover {
   background-color: #00ACEE;
+}
+
+.tweet-card {
+  width: 50%;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+@media (max-width: 480px) {
+  .tweet-card {
+    width: 100%;
+  }
+}
+.tweet-card-author {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tweet-card-author-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tweet-card-author-data img {
+  width: 2.5rem;
+}
+.tweet-card-author-data p {
+  margin-left: 1rem;
+}
+.tweet-card-author-actions a {
+  color: #333;
+}
+.tweet-card-author-actions a i {
+  cursor: pointer;
+}
+.tweet-card-body {
+  padding: 1rem;
+}
+.tweet-card-actions {
+  margin-top: 3rem;
+  border-top: 1px solid #dfdede;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tweet-card-actions i {
+  margin-top: 1.3rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  cursor: pointer;
 }
 
 .content {

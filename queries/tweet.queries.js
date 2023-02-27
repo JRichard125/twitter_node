@@ -9,3 +9,7 @@ exports.createNewTweet = (body) => {
 exports.findAllTweets =() => {
     return Tweet.find().exec();
 }
+
+exports.findTweetandDelete = (tweetId) => {
+    return Tweet.findByIdAndDelete(tweetId).exec();
+}
