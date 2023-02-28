@@ -8,6 +8,11 @@ a {
   cursor: pointer;
 }
 
+.text-danger {
+  margin-top: 10px;
+  color: #e74c3c;
+}
+
 * {
   margin: 0;
   padding: 0;

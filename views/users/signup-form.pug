@@ -18,3 +18,7 @@ block content
                         input#password(type="password", name="password" placeholder= "Password")
                     .input-box 
                         input(type="submit", value="S'inscrire" class="btn btn-primary")
+                    if errors 
+                        ul 
+                            each error in errors 
+                                li(class= "text-danger")= error
