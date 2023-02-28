@@ -2,7 +2,11 @@
     a(href="/") 
         img(width="100" height="100" src="/images/logo.png")
     ul 
-        li 
-            a(class="btn btn-primary" href="#") Connexion
-        li 
-            a(class="btn btn-primary" href="/user/signup/form") Inscription
+        if isAuthenticated 
+            li 
+                a(class="btn btn-primary" href="/auth/signout") Deconnexion 
+        else
+            li 
+                a(class="btn btn-primary" href="/auth/signin/form") Connexion
+            li 
+                a(class="btn btn-primary" href="/user/signup/form") Inscription
