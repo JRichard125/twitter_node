@@ -207,6 +207,7 @@ a {
 }
 .tweet-card-author-data p {
   margin-left: 1rem;
+  font-weight: bold;
 }
 .tweet-card-author-actions a {
   color: #333;

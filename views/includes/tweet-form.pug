@@ -1,14 +1,14 @@
 
-form( action="/tweet/new" method="post")
+form( action= tweet ? `/tweet/edit/${tweet._id}` : '/tweet/new' method="post")
     .form-title 
-        h4  Ecrire un tweet 
+        h4= tweet ? "Modifier le tweet" : "Ecrire un tweet"
     .form-body 
         .form-item 
-            textarea(name="content" placeholder="Quoi de neuf aujourd'hui ?")
+            textarea(name="content" placeholder="Quoi de neuf aujourd'hui ?")= tweet ? tweet.content : ""
         if errors 
             ul
                 each error in errors 
                     li(class="text-danger")= error
         .form-item
-            input(type="submit", value="Tweeter" class="btn btn-primary") 
+            input(type="submit", value= tweet ? "Update" : "Tweeter" class="btn btn-primary") 
 //-                 quelle chemin a prendre   | api sert a interagir avec les données
