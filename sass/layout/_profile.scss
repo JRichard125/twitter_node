@@ -28,7 +28,7 @@
 
         @include xs {
 
-            @include flex($justify: flex-start, $align:flex-start);
+            @include flex($justify: space-around, $align:flex-start);
             margin-right: 1rem;
 
         }
@@ -40,12 +40,37 @@
                 margin: 5px;
                 border: 3px solid $primary-color;
                 border-radius: 50%;
+                cursor: pointer;
         
                 @include xs {
                     width: 3rem;
                     height: 3rem;
                     margin: 0;
                 }
+            }
+        }
+
+        &-actions {
+            margin-top: 30px;
+
+            @include xs {
+                @include flex;
+                margin-top: 0;
+            }
+        }
+
+        &-data {
+            width: 100%;
+            margin-top: 30px;
+            @include flex;
+
+            @include xs {
+                display: hidden;
+            }
+
+            &-posts, &-followers, &-following {
+                @include flex($direction: column);
+                margin-right: 10px;
             }
         }
 

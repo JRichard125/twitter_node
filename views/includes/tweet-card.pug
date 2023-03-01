@@ -1,7 +1,7 @@
 .tweet-card
     .tweet-card-author 
         .tweet-card-author-data
-            img(src="/images/default_profile.png", alt="")
+            img(src=tweet.author.avatar, alt="")
             p @#{tweet.author.username}
         .tweet-card-author-actions
             a(href=`/tweet/edit/${tweet._id}`) 
