@@ -7,7 +7,7 @@ exports.createNewTweet = (body) => {
 }
 
 exports.findAllTweets =() => {
-    return Tweet.find().exec();
+    return Tweet.find({}).populate('author').exec();
 }
 
 exports.findTweetandDelete = (tweetId) => {

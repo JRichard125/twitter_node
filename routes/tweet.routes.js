@@ -1,3 +1,4 @@
+const { ensureAuthenticated } = require('../config/security.config');
 const { createTweet, deleteTweet, displayTweet, updateTweet } = require('../controllers/tweet.controllers')
 const router = require('express').Router()
 
