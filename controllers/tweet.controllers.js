@@ -3,12 +3,12 @@ const { createNewTweet, findAllTweets, findTweetandDelete, findTweetById, findTw
 exports.createTweet = async (req, res, next) => { // localhost:4000/tweet/new 
     try {
         const body = req.body;
-        await createNewTweet(body);
+        await createNewTweet({...body, author: req.user._id});
         res.redirect('/')
     } catch (err) {
         const errors = Object.keys(err.errors).map(key => err.errors[key].message)
         const tweets = await findAllTweets()
-        res.status(400).render('tweets/tweet-list', {errors, tweets})
+        res.status(400).render('tweets/tweet-list', {errors, tweets, isAuthenticated: req.isAuthenticated, currentUser: req.user})
     }
 }
 

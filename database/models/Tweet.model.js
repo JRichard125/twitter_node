@@ -7,6 +7,11 @@ const tweetSchema = schema({
         maxlength: [146, 'le tweet est trop long !'],
         minlength:[4, 'le tweet est trop court !'],
         required: (true, "Le contenu ne peut etre vide")
+    },
+    author: {
+        type: schema.Types.ObjectId,
+        ref: 'user',
+        required: true
     }
 },{
     timestamps: true
