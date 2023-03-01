@@ -41,6 +41,11 @@
                         background-color: transparent;
                         padding: 10px 15px;
                         outline: none;
+
+                        &::placeholder {
+                            color: $text-color;
+                            font-weight: 700;
+                        }
                     }
 
                     &:last-child {

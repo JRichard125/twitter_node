@@ -15,13 +15,15 @@
 
         &-data {
             @include flex;
-
+            
             img {
                 width: 2.5rem;
+                border: 1px solid $text-color;
+                border-radius: 50%;
             }
     
             p {
-                margin-left: 1rem;
+                margin-left: 0.25rem;
                 font-weight: bold;
             }
         }

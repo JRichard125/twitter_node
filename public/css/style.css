@@ -24,7 +24,7 @@ a {
   height: 15vh;
   padding: 15px 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  background-color: #dfdede;
+  background-color: #14171A;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -189,6 +189,10 @@ a {
   padding: 10px 15px;
   outline: none;
 }
+.tweets-container .tweets-list form .form-body .form-item textarea::placeholder {
+  color: #333;
+  font-weight: 700;
+}
 .tweets-container .tweets-list form .form-body .form-item:last-child {
   text-align: right;
 }
@@ -203,10 +207,10 @@ a {
   background-color: #00ACEE;
 }
 .btn-primary:hover {
-  background-color: #01597c;
+  background-color: #657786;
 }
 .btn-secondary {
-  background-color: #01597c;
+  background-color: #657786;
 }
 .btn-secondary:hover {
   background-color: #00ACEE;
@@ -240,9 +244,11 @@ a {
 }
 .tweet-card-author-data img {
   width: 2.5rem;
+  border: 1px solid #333;
+  border-radius: 50%;
 }
 .tweet-card-author-data p {
-  margin-left: 1rem;
+  margin-left: 0.25rem;
   font-weight: bold;
 }
 .tweet-card-author-actions a {
@@ -256,7 +262,7 @@ a {
 }
 .tweet-card-actions {
   margin-top: 3rem;
-  border-top: 1px solid #dfdede;
+  border-top: 1px solid #14171A;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -271,7 +277,7 @@ a {
 }
 
 .content {
-  background-color: white;
+  background-color: #657786;
   height: 85vh;
   display: flex;
   flex-direction: row;
