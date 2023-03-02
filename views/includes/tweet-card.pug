@@ -3,11 +3,13 @@
         .tweet-card-author-data
             img(src=tweet.author.avatar, alt="")
             p @#{tweet.author.username}
-        .tweet-card-author-actions
-            a(href=`/tweet/edit/${tweet._id}`) 
-                i.fa-solid.fa-pen-to-square
-            a(href=`/tweet/delete/${tweet._id}`) 
-                i.fa-solid.fa-xmark
+        if currentUser 
+            if tweet.author._id.toString() === currentUser._id.toString()
+                .tweet-card-author-actions
+                    a(href=`/tweet/edit/${tweet._id}`) 
+                        i.fa-solid.fa-pen-to-square
+                    a(href=`/tweet/delete/${tweet._id}`) 
+                        i.fa-solid.fa-xmark
 
     .tweet-card-body= tweet.content
     .tweet-card-actions 
