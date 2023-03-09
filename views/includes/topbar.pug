@@ -1,6 +1,13 @@
+script(src="/js/search-bar.js") 
 .top-bar 
     a(href="/") 
         img(width="100" height="100" src="/images/logo.png")
+    .search-bar 
+        form
+            i.fa-solid.fa-magnifying-glass 
+            input#search-input(type="text", name="search" placeholder="Rechercher un utilisateur")
+        #search-menu-container 
+            
     ul 
         if isAuthenticated 
             li 

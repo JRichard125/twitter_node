@@ -1,0 +1,58 @@
+.search-bar {
+    position: relative;
+
+    form {
+        padding: 0.5rem 1.5rem;
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+
+        input {
+            border: none;
+            padding: .5rem 1.5rem;
+            outline: none;
+        }
+    }
+
+    #search-menu-container {
+        background-color: white;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        border: 1px solid #ddd;
+        width: 100%;
+        border-radius: 5px;
+        padding: 1rem;
+        z-index: 2;
+        max-height: 400px;
+        overflow: scroll;
+
+        .search-menu-result{
+            @include flex($direction: column,);
+
+            .search-user {
+                width: 100%;
+                padding: .5rem;
+                cursor: pointer;
+
+                @include flex($justify: flex-start);
+
+                &:hover {
+                    background-color: #eee;
+                }
+
+                img {
+                    border-radius: 50%;
+                }
+
+                span {
+                    margin-left: 1rem;
+                }
+
+                
+            }
+
+
+        }
+    }
+}

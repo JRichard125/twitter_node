@@ -1,5 +1,5 @@
 
-form( action= tweet ? `/tweet/edit/${tweet._id}` : '/tweet/new' method="post")
+.form-new( action= tweet ? `/tweet/edit/${tweet._id}` : '/tweet/new' method="post")
     .form-title 
         h4= tweet ? "Modifier le tweet" : "Ecrire un tweet"
     .form-body 

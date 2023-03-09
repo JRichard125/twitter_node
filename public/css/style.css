@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 ul {
   list-style: none;
 }
@@ -6,11 +6,21 @@ ul {
 a {
   text-decoration: none;
   cursor: pointer;
+  color: #333;
+  font-weight: 600;
+}
+a:hover {
+  color: #00ACEE;
 }
 
 .text-danger {
   margin-top: 10px;
-  color: #e74c3c;
+  color: #eb4d4b;
+}
+
+.fa-regular:hover {
+  cursor: pointer;
+  color: #00ACEE;
 }
 
 * {
@@ -21,125 +31,133 @@ a {
 }
 
 .top-bar {
-  height: 15vh;
-  padding: 15px 25px;
+  width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  background-color: #14171A;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+}
+@media (min-width: 1200px) {
+  .top-bar {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
 .top-bar ul {
-  width: 30%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-.top-bar ul li {
-  margin-left: 10px;
+.top-bar ul a {
+  margin-left: 1rem;
 }
 
-.profile-container {
-  width: 20%;
-  background-color: #b2bec3;
-  height: 70%;
-  padding: 2.5rem;
+.profile {
+  width: 100%;
   position: fixed;
-  top: 20%;
-  left: 5%;
+  bottom: 0;
+  left: 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  border-radius: 10px;
+  background-color: #00ACEE;
+  padding: 1rem 0;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
 }
-@media (max-width: 480px) {
-  .profile-container {
+@media (min-width: 992px) {
+  .profile {
+    width: 30%;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    top: auto;
-    border-radius: 0px;
-    width: 100%;
-    height: 10vh;
-    padding: 1rem;
+    height: 60%;
+    top: 20%;
+    left: 5%;
+    border-radius: 1rem;
+    border: 1px solid #ddd;
+    background-color: transparent;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
   }
 }
-@media (max-width: 480px) {
-  .profile-container .profile {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-right: 1rem;
+@media (min-width: 1200px) {
+  .profile {
+    width: 20%;
   }
 }
-.profile-container .profile-img img {
-  width: 6rem;
-  height: 6rem;
-  margin: 5px;
-  border: 3px solid #00ACEE;
+.profile-img {
+  width: 20%;
+}
+.profile-img img {
+  width: 4rem;
   border-radius: 50%;
-  cursor: pointer;
+  border: 3px solid #ddd;
+  margin-left: 1rem;
 }
-@media (max-width: 480px) {
-  .profile-container .profile-img img {
-    width: 3rem;
-    height: 3rem;
+@media (min-width: 992px) {
+  .profile-img img {
+    margin-left: 0;
+  }
+}
+@media (min-width: 768px) {
+  .profile-info {
+    margin-left: -3rem;
+  }
+}
+@media (min-width: 992px) {
+  .profile-info {
     margin: 0;
   }
 }
-.profile-container .profile-actions {
-  margin-top: 30px;
+.profile-actions {
+  margin-left: 3rem;
 }
-@media (max-width: 480px) {
-  .profile-container .profile-actions {
+@media (min-width: 768px) {
+  .profile-actions {
+    margin-left: 25rem;
+  }
+}
+@media (min-width: 992px) {
+  .profile-actions {
+    margin: 2rem 0;
+  }
+}
+.profile-data {
+  display: none;
+}
+@media (min-width: 992px) {
+  .profile-data {
+    display: block;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 0;
   }
 }
-.profile-container .profile-data {
-  width: 100%;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-@media (max-width: 480px) {
-  .profile-container .profile-data {
-    display: hidden;
+@media (min-width: 992px) {
+  .profile-data-posts, .profile-data-followers, .profile-data-following {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
-}
-.profile-container .profile-data-posts, .profile-container .profile-data-followers, .profile-container .profile-data-following {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-right: 10px;
 }
 
 .tweets-container {
-  width: 80%;
-  padding-bottom: 100px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -147,54 +165,34 @@ a {
   flex-wrap: wrap;
 }
 .tweets-container .tweets-list {
-  width: 80%;
+  width: 100%;
+  margin-bottom: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-@media (max-width: 480px) {
+@media (min-width: 576px) {
   .tweets-container .tweets-list {
-    width: 100%;
+    width: 80%;
   }
 }
-.tweets-container .tweets-list form {
-  margin-top: 2rem;
-  width: 50%;
-  padding: 1rem;
-  border: 1px solid #333;
-  border-radius: 5px;
-}
-@media (max-width: 480px) {
-  .tweets-container .tweets-list form {
-    width: 100%;
+@media (min-width: 768px) {
+  .tweets-container .tweets-list {
+    width: 70%;
   }
 }
-.tweets-container .tweets-list form .form-title h4 {
-  color: #333;
+@media (min-width: 992px) {
+  .tweets-container .tweets-list {
+    width: 50%;
+    margin-left: 20rem;
+  }
 }
-.tweets-container .tweets-list form .form-body {
-  width: 100%;
-}
-.tweets-container .tweets-list form .form-body .form-item {
-  width: 100%;
-}
-.tweets-container .tweets-list form .form-body .form-item textarea {
-  border: none;
-  width: 100%;
-  height: 5rem;
-  resize: none;
-  background-color: transparent;
-  padding: 10px 15px;
-  outline: none;
-}
-.tweets-container .tweets-list form .form-body .form-item textarea::placeholder {
-  color: #333;
-  font-weight: 700;
-}
-.tweets-container .tweets-list form .form-body .form-item:last-child {
-  text-align: right;
+@media (min-width: 1200px) {
+  .tweets-container .tweets-list {
+    width: 30%;
+  }
 }
 
 .btn {
@@ -207,35 +205,45 @@ a {
   background-color: #00ACEE;
 }
 .btn-primary:hover {
-  background-color: #657786;
+  background-color: #0078a8;
 }
 .btn-secondary {
-  background-color: #657786;
+  background-color: #0078a8;
 }
 .btn-secondary:hover {
   background-color: #00ACEE;
 }
 
 .tweet-card {
-  width: 50%;
-  border: 1px solid #333;
-  border-radius: 5px;
-  margin-top: 2rem;
-  padding: 1.5rem;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
-@media (max-width: 480px) {
+@media (min-width: 576px) {
   .tweet-card {
-    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    margin: 1rem auto;
   }
 }
 .tweet-card-author {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .tweet-card-author-data {
+  width: 40%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -243,89 +251,177 @@ a {
   flex-wrap: wrap;
 }
 .tweet-card-author-data img {
-  width: 2.5rem;
-  border: 1px solid #333;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
+  border: 3px solid #00ACEE;
 }
 .tweet-card-author-data p {
-  margin-left: 0.25rem;
-  font-weight: bold;
+  margin-left: 1rem;
+}
+.tweet-card-author-actions {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .tweet-card-author-actions a {
-  color: #333;
-}
-.tweet-card-author-actions a i {
-  cursor: pointer;
+  margin-right: 1rem;
 }
 .tweet-card-body {
-  padding: 1rem;
+  width: 100%;
+  height: 7rem;
+  padding: 2rem 0;
+  text-align: start;
 }
 .tweet-card-actions {
-  margin-top: 3rem;
-  border-top: 1px solid #14171A;
+  width: 100%;
+  padding-top: 2rem;
+  border-top: 1px solid #ddd;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
-.tweet-card-actions i {
-  margin-top: 1.3rem;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  cursor: pointer;
-}
 
-.content {
-  background-color: #657786;
-  height: 85vh;
+.form-new {
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  margin: 1rem auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
 }
+@media (min-width: 576px) {
+  .form-new {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+  }
+}
+.form-new .form-title h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.form-new .form-body {
+  width: 100%;
+}
+.form-new .form-body .form-item {
+  width: 100%;
+}
+.form-new .form-body .form-item textarea, .form-new .form-body .form-item input {
+  width: 100%;
+  border: none;
+  resize: none;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+.form-new .form-body .form-item textarea {
+  border: 1px solid #ddd;
+  height: 7rem;
+  padding: 1rem;
+}
+.form-new .form-body .form-item input {
+  font-size: 1rem;
+}
 
-section {
-  padding: 50px;
+.search-bar {
+  position: relative;
+}
+.search-bar form {
+  padding: 0.5rem 1.5rem;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+.search-bar form input {
+  border: none;
+  padding: 0.5rem 1.5rem;
+  outline: none;
+}
+.search-bar #search-menu-container {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  border: 1px solid #ddd;
+  width: 100%;
+  border-radius: 5px;
+  padding: 1rem;
+  z-index: 2;
+  max-height: 400px;
+  overflow: scroll;
+}
+.search-bar #search-menu-container .search-menu-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.search-bar #search-menu-container .search-menu-result .search-user {
+  width: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.search-bar #search-menu-container .search-menu-result .search-user:hover {
+  background-color: #eee;
+}
+.search-bar #search-menu-container .search-menu-result .search-user img {
+  border-radius: 50%;
+}
+.search-bar #search-menu-container .search-menu-result .search-user span {
+  margin-left: 1rem;
+}
+
+.content-box {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-@media (max-width: 480px) {
-  section {
-    padding: 15px;
-  }
+.content-box .form-box {
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  margin-top: 2rem;
 }
-section .content-box {
-  width: 20%;
-  padding: 30px;
-  border: 1px solid #333;
-  border-radius: 5px;
+.content-box .form-box h2 {
+  display: inline-block;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #00ACEE;
 }
-@media (max-width: 480px) {
-  section .content-box {
-    width: 100%;
-  }
-}
-section .content-box .form-box {
+.content-box .form-box .input-box {
   width: 100%;
 }
-section .content-box .form-box .input-box {
-  margin-top: 15px;
-}
-section .content-box .form-box .input-box input {
+.content-box .form-box .input-box input {
   width: 100%;
-  padding: 10px 15px;
-  border-radius: 5px;
-  border: 1px solid #333;
-  outline-style: none;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  margin: 1rem auto;
+}
+.content-box .form-box .input-box p a {
+  text-decoration: underline;
+  color: #00ACEE;
 }
 
 .user-content {
-  padding-top: 5rem;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -333,80 +429,114 @@ section .content-box .form-box .input-box input {
   flex-wrap: wrap;
 }
 .user-content .user-profile {
-  border: 1px solid #ddd;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  width: 40%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  width: 100%;
+  background-color: #f1f1f1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
+@media (min-width: 576px) {
+  .user-content .user-profile {
+    width: 80%;
+  }
+}
+@media (min-width: 768px) {
+  .user-content .user-profile {
+    width: 60%;
+  }
+}
 .user-content .user-profile-img {
   width: 100%;
+  border: 1px solid #ddd;
+  margin-top: 3rem;
+  height: 12rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  background-image: url("https://images.unsplash.com/photo-1616469829167-0bd76a80c913?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-position: center;
 }
 .user-content .user-profile-img img {
-  margin-top: -6rem;
   width: 10rem;
-  height: 10rem;
+  margin-top: -2rem;
+  margin-left: 1rem;
   border-radius: 50%;
   border: 3px solid #00ACEE;
 }
 .user-content .user-profile-info {
   width: 100%;
-  height: 10%;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
   flex-wrap: wrap;
 }
 .user-content .user-profile-info h3 {
-  font-size: 2.2rem;
-  margin-right: 2rem;
+  font-size: 1.5rem;
+  margin: auto 1rem;
 }
 .user-content .user-profile-info p {
   font-size: 2rem;
 }
 .user-content .user-profile-actions {
   width: 100%;
-  margin-top: 1.3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.user-content .user-profile-actions a {
+  margin-right: 2rem;
 }
 .user-content .user-profile-data {
   width: 100%;
-  font-size: 1.3rem;
+  padding: 1rem 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 2rem;
 }
-.user-content .user-profile-data-posts, .user-content .user-profile-data-followers, .user-content .user-profile-data-following {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+@media (min-width: 1200px) {
+  .user-content .user-profile-data {
+    width: 60%;
+  }
 }
 
 .tweets-user-container {
   width: 100%;
+  text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
+@media (min-width: 576px) {
+  .tweets-user-container {
+    width: 100%;
+  }
+}
 .tweets-user-container .tweets-user-list {
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .tweets-user-container .tweets-user-list {
+    width: 80%;
+  }
+}
+@media (min-width: 768px) {
+  .tweets-user-container .tweets-user-list {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  .tweets-user-container .tweets-user-list {
+    width: 30%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
