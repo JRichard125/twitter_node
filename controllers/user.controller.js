@@ -1,4 +1,4 @@
-const { createNewUser, findUserByUsername, findUsersByQuerySearch } = require("../queries/user.queries");
+const { createNewUser, findUserByUsername, findUsersByQuerySearch, findUserById, addUserToCurrentUserFollowingList, removeUserFromCurrentUserFollowingList } = require("../queries/user.queries");
 const multer = require('multer');
 const path = require('path');
 const { findTweetsFromUsername } = require("../queries/tweet.queries");
@@ -67,6 +67,33 @@ exports.userList = async (req,res,next) => {
         const search = req.query.search;
         const users = await findUsersByQuerySearch(search);
         res.render('includes/search-result', {users})
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.followUser = async (req,  res, next) => {
+    try {
+        const userId = req.params.userId
+        const [ _ , user] = await Promise.all ([
+            addUserToCurrentUserFollowingList(req.user, userId),
+            findUserById(userId)
+        ])
+
+        res.redirect(`/user/${user.username}`)
+    } catch (error) {
+        next(error)
+    }
+}
+exports.unfollowUser = async (req,  res, next) => {
+    try {
+        const userId = req.params.userId
+        const [ _ , user] = await Promise.all([
+            removeUserFromCurrentUserFollowingList(req.user, userId),
+            findUserById(userId)
+        ])
+
+        res.redirect(`/user/${user.username}`)
     } catch (error) {
         next(error)
     }

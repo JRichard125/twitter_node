@@ -38,3 +38,21 @@ exports.findUsersByQuerySearch = (search) => {
     const reg = new RegExp(regExp)
     return User.find({username: {$regex: reg}}).exec()
 }
+
+exports.addUserToCurrentUserFollowingList = async (currentUser, userId) => {
+    currentUser.followings = [...currentUser.followings, userId]
+    const user = await this.findUserById(userId)
+    user.followers = [...user.followers, currentUser._id]
+    user.save()
+    return currentUser.save()
+}
+
+exports.removeUserFromCurrentUserFollowingList = async (currentUser, userId) => {
+    currentUser.followings = currentUser.followings.filter(objId => objId.toString() !== userId)
+    const user = await this.findUserById(userId)
+    user.followers = currentUser.followers.filter(objId => objId.toString() !== userId)
+    user.save()
+    return currentUser.save()
+}
+
+// [1,2,3,4,5,6,7].filter(id=> id !== 4)
