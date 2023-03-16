@@ -9,10 +9,7 @@ script(src="/js/search-bar.js")
         #search-menu-container 
             
     ul 
-        if isAuthenticated 
-            li 
-                a(class="btn btn-primary" href="/auth/signout") Deconnexion 
-        else
+        if !isAuthenticated 
             li 
                 a(class="btn btn-primary" href="/auth/signin/form") Connexion
             li 

@@ -14,13 +14,13 @@ if isAuthenticated
             h3 @#{currentUser.username}
             p #{currentUser.firstname} #{currentUser.lastname}
         .profile-data 
-            .profile-data-posts 
-                p Posts 
-                p 5
-            .profile-data-followers 
-                p Followers 
-                p= currentUser.followers.length
-            .profile-data-following 
-                p Following 
-                p= currentUser.followings.length
+        .profile-actions 
+            i.fa-solid.fa-users
+                span= currentUser.followers.length
+            i.fa-solid.fa-user-plus
+                span= currentUser.followings.length
+            i.fa-regular.fa-message
+                span 5
+            a(href="/auth/signout") 
+                i.fa-solid.fa-arrow-right-from-bracket
             
