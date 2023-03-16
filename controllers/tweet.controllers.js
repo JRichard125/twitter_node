@@ -22,12 +22,14 @@ exports.createTweet = async (req, res, next) => { // localhost:4000/tweet/new
 
 exports.tweetList = async (req, res, next) => {
     try {
-        // if(!req.user) {
+        if(!req.user) {
             const tweets = await findAllTweets()
+            res.render('tweets/tweet-list', {tweets})
+        } else {
+            const tweets = await getCurentUserTweetsWithFollowing(req.user)
             res.render('tweets/tweet-list', {tweets, isAuthenticated: req.isAuthenticated(), currentUser: req.user})
-        // }
-        // const tweets = await getCurentUserTweetsWithFollowing(req.user)
-        // res.render('tweets/tweet-list', {tweets, isAuthenticated: req.isAuthenticated(), currentUser: req.user})
+
+        }
     } catch (error) {
         next(error)
     }
