@@ -12,7 +12,8 @@ if isAuthenticated
                 img#profile-image(src=currentUser.avatar, alt="")
         .profile-info
             h3 @#{currentUser.username}
-            p #{currentUser.firstname} #{currentUser.lastname}
+            p #{currentUser.fullname}
+            p A rejoint twitter en #{currentUser.createdAt.toLocaleString('fr', {month:'long'})} #{currentUser.createdAt.getFullYear()}
         .profile-data 
         .profile-actions 
             i.fa-solid.fa-users

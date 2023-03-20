@@ -7,7 +7,11 @@ exports.createNewTweet = (body) => {
 }
 
 exports.findAllTweets =() => {
-    return Tweet.find({}).populate('author').exec();
+    return Tweet
+    .find({})
+    .populate('author')
+    .sort('-createAt')
+    .exec();
 }
 
 exports.getCurentUserTweetsWithFollowing = (user) => {
@@ -15,7 +19,11 @@ exports.getCurentUserTweetsWithFollowing = (user) => {
 }
 
 exports.findTweetsFromUsername = (authorId) => {
-    return Tweet.find({author: authorId}).populate('author').exec();
+    return Tweet
+    .find({author: authorId})
+    .populate('author')
+    .sort('-createAt')
+    .exec();
 }
 
 exports.findTweetandDelete = (tweetId) => {
@@ -32,9 +40,24 @@ exports.findTweetById = (tweetId) => {
                 path: 'author'
             }
         })
+        .sort('-createAt')
         .exec();
 }
 
 exports.findTweetAndUpdate = (tweetId, body) => {
     return Tweet.findByIdAndUpdate(tweetId, {$set: body}).exec();
+}
+
+exports.likedTweet = async (tweetId, user) => {
+    const tweet = await Tweet.findById(tweetId).exec()
+
+    if(!user.likedTweets.includes(tweet._id)) {
+        tweet.nbLikes++
+        user.likedTweets.push(tweet._id)
+    } else {
+        tweet.nbLikes--;
+        user.likedTweets = user.likedTweets.filter(tId => tId.toString() !== tweetId.toString())
+    }
+    user.save()
+    return tweet.save()
 }

@@ -16,7 +16,8 @@ const tweetSchema = schema({
     comments : {
         type: [schema.Types.ObjectId],
         ref : 'comment'
-    }
+    },
+    nbLikes : {type: Number, default:0}
 },{
     timestamps: true
 })

@@ -4,4 +4,6 @@
             img(src=comment.author.avatar, alt="")
             a(href=`/user/${comment.author.username}`) 
                 p @#{comment.author.username}
+            p= moment(comment.createdAt).local('fr').fromNow()
+            
     .tweet-card-body= comment.message

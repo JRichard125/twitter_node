@@ -4,7 +4,8 @@ const {
     findTweetandDelete,
     findTweetById,
     findTweetAndUpdate,
-    getCurentUserTweetsWithFollowing
+    getCurentUserTweetsWithFollowing,
+    likedTweet
 } = require("../queries/tweet.queries");
 
 exports.createTweet = async (req, res, next) => { // localhost:4000/tweet/new 
@@ -76,6 +77,17 @@ exports.showTweet = async (req, res, next) => {
         const tweetId = req.params.tweetId;
         const tweet = await findTweetById(tweetId)
         res.render('tweets/tweet-show', {tweet,comments: tweet.comments , isAuthenticated: req.isAuthenticated(), currentUser: req.user})
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.likeTweet = async (req,res,next) => {
+    try {
+        const tweetId = req.params.tweetId;
+        const user = req.user
+        await likedTweet(tweetId,user)
+        res.redirect('/')
     } catch (error) {
         next(error)
     }
