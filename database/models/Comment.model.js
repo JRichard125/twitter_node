@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const schema = mongoose.Schema()
+const schema = mongoose.Schema
 
 const commentSchema = schema({
     message : {type: String, required: [true, "Le commentaire ne peut etre vide"]},

@@ -12,6 +12,10 @@ const tweetSchema = schema({
         type: schema.Types.ObjectId,
         ref: 'user',
         required: true
+    },
+    comments : {
+        type: [schema.Types.ObjectId],
+        ref : 'comment'
     }
 },{
     timestamps: true
