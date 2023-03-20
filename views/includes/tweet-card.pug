@@ -18,7 +18,6 @@
         a(href=`/tweet/${tweet._id}`) 
             i.fa-comment(class= tweet.comments.length >0 ? 'fa-solid' : 'fa-regular')
             span= tweet.comments.length
-        a(href=`/tweet/like/${tweet._id}`) 
-            i.fa-heart(class= tweet.nbLikes >0 ? 'fa-solid' : 'fa-regular')
+        i.fa-heart(class= tweet.nbLikes >0 ? 'fa-solid' : 'fa-regular' tweetid = tweet._id)
             span= tweet.nbLikes
         i.fa-regular.fa-share-from-square 

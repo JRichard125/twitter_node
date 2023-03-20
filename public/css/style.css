@@ -340,6 +340,10 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
 }
+.tweet-card-actions i:hover {
+  cursor: pointer;
+  color: #00ACEE;
+}
 
 .form-new {
   width: 100%;
