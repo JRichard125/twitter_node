@@ -285,6 +285,12 @@ a:hover {
     margin: 1rem auto;
   }
 }
+.tweet-card p {
+  font-weight: 600;
+}
+.tweet-card .fa-retweet {
+  margin: 1rem;
+}
 .tweet-card-author {
   width: 100%;
   border: 1px solid #ddd;
@@ -440,6 +446,10 @@ a:hover {
 }
 .search-bar #search-menu-container .search-menu-result .search-user span {
   margin-left: 1rem;
+}
+
+.tweets-list-container {
+  width: 100%;
 }
 
 .content-box {

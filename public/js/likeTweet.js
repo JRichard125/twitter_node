@@ -11,13 +11,20 @@ function likeTweet() {
     allHearts.forEach(element => {
         element.addEventListener('click', (event) => {
             const tweetId = event.target.getAttribute('tweetid');
-            axios.get(`/tweet/like/${tweetId}`)
+            const isAuthenticated = event.target.getAttribute('authenticated')
+
+
+            if (isAuthenticated === 'yes') {
+                axios.get(`/tweet/like/${tweetId}`)
                 .then(response => {
                     console.log(response.data)
                     tweetsContainer.innerHTML = ''
                     tweetsContainer.innerHTML = response.data
                     likeTweet()
-                 })
+                    })
+            } else {
+                location.assign('/auth/signin/form')
+            }
         })
     })
 }
